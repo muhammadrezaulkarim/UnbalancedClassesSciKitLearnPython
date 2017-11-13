@@ -14,8 +14,7 @@
 # This file is open for public re-use.
 # With this file, you can perform machine learning based classification experiments with a non-stationary (not time-sensitive) 
 # unbalanced data set. The last column in the data set must contain the dependent (class) variable, while all the other columns
-# are independent (predictor) variables. The class variable sholuld contain numbers only. You need to represent
-# classes (categories) with numbers (e.g. 0,1,2 etc.)
+# are independent (predictor) variables. 
 
 #General Steps for Building Classification Models with a given data set:
 #Step 1: Clean your data set (Impute missing values, remove samples with missing values etc.). Cleaning actions
@@ -145,8 +144,8 @@ dataset_target = y_resampled
 #dataset_target = y_resampled
 
 #Class Imbalance Handling 5 (Combine over- and under-sampling using SMOTE and Tomek links). Perform over-sampling using SMOTE 
-#and cleaning using Tomek links. Tomek method performs under-sampling by removing Tomek’s links.
-# A Tomek’s link exist if the two samples are the nearest neighbors of each other
+#and cleaning using Tomek links. Tomek method performs under-sampling by removing Tomekâ€™s links.
+# A Tomekâ€™s link exist if the two samples are the nearest neighbors of each other
 #smoteObject=SMOTE(random_state=seed, ratio='auto', kind='regular', k_neighbors=5, n_jobs=NUM_JOBS)
 #tomekObject=TomekLinks(random_state=seed,ratio='auto', n_jobs=NUM_JOBS)
 #imbalanceHandeler =  SMOTETomek(random_state=seed,ratio='auto', smote=smoteObject,tomek=tomekObject)
@@ -223,7 +222,7 @@ classifier = OneVsRestClassifier(svm.SVC(random_state=seed))
 #    "estimator__C": [1,2,4,8], #Penalty parameter C of the error term
 #    "estimator__kernel": ["poly","rbf","linear"], # different type of kernels to be explored
 #    "estimator__degree":[1, 2, 3, 4],  # Degree of the polynomial kernel function. Other kernels will ignore it 
-#    "estimator__gamma":[0.001, 0.01, 0.1,0.5,1.0], # Kernel coefficient for ‘rbf’, ‘poly’. gamma, must be greater than 0.
+#    "estimator__gamma":[0.001, 0.01, 0.1,0.5,1.0], # Kernel coefficient for â€˜rbfâ€™, â€˜polyâ€™. gamma, must be greater than 0.
 #}
 
 parameters_grid = {
