@@ -14,8 +14,7 @@
 # This file is open for public re-use.
 # With this file, you can perform machine learning based classification experiments with a non-stationary (not time-sensitive) 
 # unbalanced data set. The last column in the data set must contain the dependent (class) variable, while all the other columns
-# are independent (predictor) variables. The class variable sholuld contain numbers only. You need to represent
-# classes (categories) with numbers (e.g. 0,1,2 etc.)
+# are independent (predictor) variables. 
 
 #General Steps for Building Classification Models with a given data set:
 #Step 1: Clean your data set (Impute missing values, remove samples with missing values etc.). Cleaning actions
@@ -146,8 +145,8 @@ dataset_target = y_resampled
 #dataset_target = y_resampled
 
 #Class Imbalance Handling 5 (Combine over- and under-sampling using SMOTE and Tomek links). Perform over-sampling using SMOTE 
-#and cleaning using Tomek links. Tomek method performs under-sampling by removing Tomek’s links.
-# A Tomek’s link exist if the two samples are the nearest neighbors of each other
+#and cleaning using Tomek links. Tomek method performs under-sampling by removing Tomekâ€™s links.
+# A Tomekâ€™s link exist if the two samples are the nearest neighbors of each other
 #smoteObject=SMOTE(random_state=seed, ratio='auto', kind='regular', k_neighbors=5, n_jobs=NUM_JOBS)
 #tomekObject=TomekLinks(random_state=seed,ratio='auto', n_jobs=NUM_JOBS)
 #imbalanceHandeler =  SMOTETomek(random_state=seed,ratio='auto', smote=smoteObject,tomek=tomekObject)
@@ -222,7 +221,7 @@ classifier = OneVsRestClassifier(LogisticRegression(random_state=seed))
 
 parameters_grid = {
     "estimator__C": [1,2,4,8], #Penalty parameter C of the error term
-    "estimator__penalty": ["l2"], #Used to specify the norm used in the penalization. ‘l1’ or ‘l2’,
+    "estimator__penalty": ["l2"], #Used to specify the norm used in the penalization. â€˜l1â€™ or â€˜l2â€™,
     "estimator__solver": ["liblinear","sag","newton-cg"], # different type of solvers to be explored. Some good for small data sets, while others for large
     "estimator__max_iter":[200]  # Maximum number of iterations taken for the solvers to converge
 }
